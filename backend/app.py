@@ -72,7 +72,7 @@ def stats(country_code):
 
         data = [(country_id, s['Confirmed'], s['Deaths'], s['Recovered'], s['Active'], s['Date'])
                 for s in response.json()]
-        print(data[0])
+
         try:
             sql = 'INSERT INTO stats (country_id, confirmed, deaths, recovered, active, date) ' \
                   'VALUES (%s, %s, %s, %s, %s, %s)'
@@ -93,7 +93,6 @@ def countries():
             cur.execute(sql)
             res = cur.fetchall()
         except psycopg2.Error as e:
-            print(e)
             return jsonify({'detail': 'Retrieving list of countries is failed'}), 500
 
         return jsonify([to_country_obj(row) for row in res])

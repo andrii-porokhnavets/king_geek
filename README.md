@@ -1,7 +1,7 @@
-Platform that allows to populate database with data about coronavirus
+A platform that allows real-time filling of the database with data about the coronavirus
 
 ## Pre-requirements
-Postgres server with database `DB_NAME` from `config.py`. Also `DB_USER` should have permissions interact to work with this database
+Postgres server run with default configuration and database `DB_NAME` from `config.py`. Also `DB_USER` should have permissions interact to work with this database
 
 ### Tables
 
